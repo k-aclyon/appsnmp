@@ -1,0 +1,189 @@
+/* ici on définit les fond et les couleurs, ainsi que certaines tailles (lorsqu'elle sont fonction des fonds, utilisation de png par ex.) */
+body{
+	color:#000;
+/*	background:#e0e0e0 url(images/linux.jpg) repeat-x;*/
+background-repeat: no-repeat; /* Le fond ne sera pas répété */
+/*background-position: top right; /* Le fond sera placé en haut à droite */
+    font:76% Georgia,Verdana,Tahoma,Arial,sans-serif;
+    margin:70px;
+    padding:0px;
+}
+a{
+color:#000;
+font-weight:700;
+text-decoration:none;
+}
+
+.formwhite
+{
+color:green;
+text-align:left;
+}
+
+.formblack
+{
+color:red;
+text-align:left;
+}
+
+.formt
+{
+text-align:center;
+}
+
+
+.imageflottante
+{
+float:left;
+}
+
+a:hover{
+color:#d04a10;
+}
+#content a img:hover{
+	background-color:#999999;
+}
+li { list-style-type: none;}
+li img {vertical-align: middle;}
+p{  line-height:1.5em;
+    margin:0 0 15px;}
+h1{ margin:0px;}
+h2{ margin:0px;}
+img{ border:None;}
+/*    ########################################################     */
+/*        classe de la page */
+/* description de la partie supérieure de la page*/
+#above_part{
+    position:absolute;
+    top:0%;
+    font-weight:400;
+    padding:0px;
+    margin:0px;
+    text-align:center;}
+#topbox{
+	/* fond et taille de l'entete */
+	width:100%;
+	height:0px;
+/*	background:url(/image/erable/leaves.png) top center no-repeat;*/}
+#topbox h1{top:-50px;}
+/* ############################################*/
+/* menu Action */
+#leftside{background:url(/image/erable/left_side.png) top left no-repeat;
+	width:22%;
+	height:656px;}
+#leftside h1{
+	font-size:18px;
+	font-weight:bold;
+}
+.action{color:#505050;
+	position:relative;
+    text-decoration:none;
+    text-align:left;
+    width:125px;}
+.action:hover{ border:1px solid #fa9035;
+        color:#d04a10;
+    }
+.action_active{
+        color:#ee4a10;
+    }
+/* trinagle */
+.open { padding-left:10px;
+        display: block;}
+.closed { display: none;
+    	  padding-left:10px;}
+/* ############################################*/
+/* menu d'administration */
+#rightside{background:url(/image/erable/admin_menu_top.png)top left no-repeat;
+        width:160px;
+	height:30px;/*527px;*/
+	z-index:11;
+    	float:right;
+	padding:0px;
+	float:left;}
+#rightside h1{font-size:1.1em;
+	font-weight:bold;
+	margin:0 0 0 0;
+	float:left;}
+#rightside_top{width:130px;
+	height:30px;
+	padding:0px;
+	margin:0px;
+	border:none;
+	padding-left:15px;}
+.admin_toggle_link{
+	text-align:right;
+	padding-top:5px;
+}
+.admin_open{
+	display: block;
+}
+.admin_close{
+	display:none;
+}
+#rightside {font-size:0.9em;
+    margin:2px 0 12px 10px;}
+#rightside_bottom{background:url(/image/erable/admin_menu_bottom.png)no-repeat;
+		padding:0px;
+		margin:0px;
+		border:none;
+        	width:130px;
+	        height:427px;
+	        padding-left:5px;
+		margin-left:13px;
+		padding-top:5px;}
+#bodypage{	background:url(/image/erable/headerv.jpg) top left repeat-x;
+	position:relative;
+    top:28px;
+    width:100%;
+    min-height:450px;}
+/* titre de la partie principale */
+#topbox h1{ margin:0px;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;}
+/* contenu de la partie principale de l'agregateur (où se place les actions)*/
+#content{
+    padding-left:10px;
+    padding-top:5px;
+    font-size:12px;
+    text-align:center;
+    float:left;
+    width:95%;
+}
+#content p,#contentalt p{
+        margin:8px 0 0 10px;
+}
+#content h2{
+    font-size:14px;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin: 5px 0px 5px 0px;
+    padding:0px;
+}
+
+/* Section auth locale */
+.auth_local{
+	position:relative;
+	top:50px;
+	float:left;
+	font-size:11px;
+}
+.auth_local_entete{
+	font-weight:bold;
+	padding:3px;
+	border-bottom:1px solid #000;
+}
+
+#auth_local{
+	padding-left:18px;
+	padding-top:3px;
+}
+.auth_local_increase{
+	padding:1px;
+}
+.auth_local_reduce{
+	padding:1px;
+}
+.inline_element{
+	float:left;
+}

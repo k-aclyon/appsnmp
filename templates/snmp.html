@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<link href="{{ url_for('static', filename='ead.css') }}" rel="stylesheet" type="text/css" />
+<CENTER>
+<img style="border: 0px solid ; width: 1004px; height: 149px;" alt="Bandeau" src="http://www.ac-lyon.fr/index.php?module=media&action=Display&cmpref=413642&lang=fr&width=&height=&format=&alt="<br>
+</CENTER>
+<br>
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ titre }}</title>
+    </head>
+ 
+{% block body %}
+      <div style="text-align:center;"><h1>Récupération des informations snmp pour les LBB</h1></div>
+	<br>
+        <ul>
+<h3><form action="" method="get" class="formt"><br>
+<br>
+<p>ip du routeur : 
+<input type="text" name="iprouteur" />
+<br>
+<br>
+<input type="submit" value="Valider" /></p></form>
+<br>
+
+{% if data != None %}
+<TABLE BORDER="5" align=center style="font-size:20px;align:center">
+<TR>
+<tH colspan=3><font color=#af2479>{{data[4]}} - {{data[0]}}</font></td>
+</TR>
+
+
+<TR> 
+ <th bgcolor=#606265></th>
+ <TH>BD</TH> 
+ <TH>SNMP</TH> 
+</TR> 
+
+<TR> 
+ <TH>IP LAN</TH> 
+ <TD><font color=blue>{{data[1]}}</font></TD> 
+ <TD><font color=blue>{{lst[0]}}</font></TD> 
+</TR> 
+
+<TR> 
+ <TH>Référence</TH> 
+ <TD><font color=blue>{{data[2]}}</font></TD> 
+{% if lst[1] == data[2] %}
+ <TD><font color=green>{{lst[1]}}</font></TD>
+{% else %}
+ <TD><font color=red>{{lst[1]}}</font></TD>
+{% endif %}
+</TR> 
+
+<TR> 
+ <TH>IP de Supervision</TH> 
+ <TD><font color=blue>{{data[3]}}</font></TD> 
+{% if lst[3] == data[3] %}
+ <TD><font color=green>{{lst[3]}}</font>
+{% else %}
+ <TD><font color=red>{{lst[3]}}</font>
+{% endif %}
+</TR>
+
+<TR> 
+ <TH>Type LBB</TH> 
+ <TD><font color=blue>{{data[5]}}</font></TD> 
+{% if lst[2] == data[5] %}
+ <TD><font color=green>{{lst[2]}}</font>
+{% else %}
+ <TD><font color=red>{{lst[2]}}</font>
+{% endif %}
+</TR>
+
+<TR>
+ <TH>Supervision (ping)</TH> 
+ <TD bgcolor=#606265></TD> 
+{% if state_ping == 0 %}
+<TD><p><img src="static/images/state_ok.png" align="middle" height="100" width="100"/></TD> 
+{% else %}
+ <TD><p><img src="static/images/state_critical.png" align="middle" height="100" width="100"/></TD> 
+{% endif %}
+</TR> 
+
+<TR>
+ <TH>Uptime</TH> 
+ <TD bgcolor=#606265></TD> 
+{% if "Timeout" in lst[4] %}
+ <TD><font color=red>{{lst[4].replace('#upt ','').replace('days','jours')}}</font></TD> 
+{% else %}
+ <TD><font color=blue>{{lst[4].replace('#upt ','').replace('days','jours')}}</font></TD> 
+{% endif %}
+</TR> 
+
+</TABLE> 
+
+<br>
+<br>
+
+<p align=center><a href="{{ url_for('index') }}">retour</a></p>
+
+
+</html>
+{% endif %}
+
+{% endblock %}
