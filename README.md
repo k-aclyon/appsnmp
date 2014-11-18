@@ -1,7 +1,5 @@
 appsnmp
 =======
-appsnmp
-=======
 
 Application web à l'aide de l'outil python-flask.
 
